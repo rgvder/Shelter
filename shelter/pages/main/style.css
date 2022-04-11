@@ -349,6 +349,10 @@ template {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-size: 16px;
   font-family: Arial, sans-serif;
@@ -613,7 +617,7 @@ h5 {
   color: #292929;
 }
 
-.button:not([disabled]):hover {
+.button:not([disabled]):not(.button_current):hover {
   background: #FDDCC4;
   border: 2px solid #FDDCC4;
 }
@@ -622,6 +626,14 @@ h5 {
   border: 2px solid #CDCDCD;
   color: #CDCDCD;
   cursor: not-allowed;
+}
+
+.button_current {
+  background: #F1CDB3;
+  border: 2px solid #F1CDB3;
+}
+.button_current:hover {
+  cursor: default;
 }
 
 .not-only {
