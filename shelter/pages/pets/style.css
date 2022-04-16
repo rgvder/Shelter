@@ -361,11 +361,19 @@ body {
 footer,
 header,
 section {
-  min-width: 1280px;
+  min-width: 320px;
   padding-left: 40px;
   padding-right: 40px;
 }
 
+@media (max-width: 1279px) {
+  footer,
+header,
+section {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
 ul li {
   list-style: none;
 }
@@ -491,9 +499,15 @@ h5 {
 }
 
 .header {
-  padding: 60px 0;
+  padding-top: 60px;
+  padding-bottom: 60px;
   position: absolute;
   width: 100%;
+}
+@media (max-width: 1279px) {
+  .header {
+    padding-top: 30px;
+  }
 }
 .header__wrapper {
   display: flex;
@@ -504,7 +518,7 @@ h5 {
   display: flex;
 }
 .header .menu__list :not(:last-child) {
-  padding: 0 35px 0 0;
+  padding: 0 36px 0 0;
 }
 .header .menu__link {
   font-style: normal;
@@ -533,7 +547,8 @@ h5 {
 }
 
 .header.header-pets {
-  padding: 30px 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
   background: #FFF;
   position: sticky;
   top: 0;
@@ -554,28 +569,45 @@ h5 {
   background-repeat: repeat;
 }
 .footer__wrapper {
-  padding: 40px 0 0 0;
+  padding-top: 40px;
   display: flex;
+}
+@media (max-width: 1279px) {
+  .footer__wrapper {
+    padding-top: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .footer__content {
   display: flex;
   padding: 16px 160px 0 0;
+}
+@media (max-width: 1279px) {
+  .footer__content {
+    padding: 0 34px 25px;
+  }
 }
 .footer__column {
   display: flex;
   flex-direction: column;
 }
 .footer .column-contact {
-  padding: 0 137px 0 0;
+  padding-right: 137px;
+}
+@media (max-width: 1279px) {
+  .footer .column-contact {
+    padding-right: 38px;
+  }
 }
 .footer .column-contact h3 {
-  padding: 0 0 35px;
+  padding: 0 0 38px;
 }
 .footer .column-contact div {
-  padding: 0 0 40px;
+  padding: 0 0 37px;
 }
 .footer .column-address h3 {
-  padding: 0 0 30px;
+  padding: 0 0 33px;
 }
 .footer .column-address div {
   padding: 0 0 32px;
@@ -666,11 +698,11 @@ h5 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 78px 0 100px;
+  padding: 80px 0 100px;
 }
 .our-friends__title {
   color: #545454;
-  width: 33.33%;
+  width: 400px;
   text-align: center;
   padding: 0 0 60px 0;
 }
@@ -678,16 +710,37 @@ h5 {
   padding: 0 0 60px 0;
 }
 
+@media (max-width: 1279px) {
+  .our-friends-pets__wrapper {
+    padding: 80px 0 76px;
+  }
+}
 .our-friends-pets__title {
-  padding: 0 0 45px 0;
+  padding-bottom: 45px;
+}
+@media (max-width: 1279px) {
+  .our-friends-pets__title {
+    padding-bottom: 30px;
+  }
 }
 .our-friends-pets .slider-pets {
-  padding: 0 0 30px 0;
+  padding-bottom: 30px;
+}
+@media (max-width: 1279px) {
+  .our-friends-pets .slider-pets {
+    padding-bottom: 8px;
+  }
 }
 .our-friends-pets .slider-pets__wrapper {
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 15px 0 0;
+  padding-top: 15px;
+}
+@media (max-width: 1279px) {
+  .our-friends-pets .slider-pets__wrapper {
+    padding-top: 0;
+    justify-content: center;
+  }
 }
 .our-friends-pets .slider-pets__element {
   display: flex;
@@ -701,6 +754,14 @@ h5 {
 .our-friends-pets .slider-pets__element :nth-child(n) {
   margin: 0 0 30px 0;
 }
+@media (max-width: 1279px) {
+  .our-friends-pets .slider-pets__element {
+    margin: 0 20px 30px 20px;
+  }
+  .our-friends-pets .slider-pets__element:nth-child(n+7) {
+    display: none;
+  }
+}
 .our-friends-pets .slider-pets__element:hover {
   cursor: pointer;
   background: #FFF;
@@ -712,9 +773,11 @@ h5 {
 }
 
 .pagination {
-  width: 28.33%;
   display: flex;
   justify-content: space-between;
+}
+.pagination button {
+  margin: 0 10px 0 10px;
 }
 
 .slider {
@@ -733,6 +796,11 @@ h5 {
 .slider__button_back {
   margin: 0 8px 0 0;
 }
+@media (max-width: 1279px) {
+  .slider__button_back {
+    margin: 0 12px 0 0;
+  }
+}
 .slider__button_back:after {
   content: "";
   background: #292929;
@@ -747,6 +815,11 @@ h5 {
 }
 .slider__button_next {
   margin: 0 0 0 8px;
+}
+@media (max-width: 1279px) {
+  .slider__button_next {
+    margin: 0 0 0 12px;
+  }
 }
 .slider__button_next:after {
   content: "";
@@ -775,6 +848,17 @@ h5 {
 }
 .slider__element :nth-child(n) {
   margin: 0 0 30px 0;
+}
+@media (max-width: 1279px) {
+  .slider__element {
+    margin: 0;
+  }
+  .slider__element:last-child {
+    display: none;
+  }
+  .slider__element + .slider__element {
+    margin-left: 40px;
+  }
 }
 .slider__element:hover {
   cursor: pointer;
