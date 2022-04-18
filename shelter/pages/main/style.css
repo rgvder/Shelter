@@ -534,6 +534,7 @@ h5 {
 }
 .header .menu__list {
   display: flex;
+  padding-bottom: 3px;
 }
 .header .menu__list :not(:last-child) {
   padding: 0 36px 0 0;
@@ -544,6 +545,7 @@ h5 {
   }
 }
 .header .menu__link {
+  display: block;
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
@@ -563,7 +565,7 @@ h5 {
   height: 3px;
   width: 100%;
   left: 0;
-  bottom: -4px;
+  bottom: -2px;
 }
 .header .menu__link:hover {
   color: #FAFAFA;
