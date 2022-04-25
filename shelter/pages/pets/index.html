@@ -22,8 +22,7 @@
                     <li><a href="#footer" class="menu__link">Contacts</a></li>
                 </ul>
                 <div class="header__mobile mobile mobile-pets">
-                    <input type="checkbox" name="burger" id="burger" style="display: none">
-                    <label for="burger" class="mobile__label"></label>
+                    <div class="mobile__label"></div>
                     <div class="mobile__menu">
                         <div class="mobile__header">
                             <a href="../main/index.html" class="header__logo logo logo-pets">
@@ -38,7 +37,7 @@
                             <li><a href="#footer" class="menu__link mobile__link">Contacts</a></li>
                         </ul>
                     </div>
-                    <label for="burger" class="mobile__blackout"></label>
+                    <div class="mobile__blackout"></div>
                 </div>
             </nav>
         </div>
@@ -49,54 +48,23 @@
                 <h3 class="our-friends__title our-friends-pets__title">Our friends who <br>are looking for a house</h3>
                 <div class="our-friends__slider slider-pets slider">
                     <div class="slider__wrapper slider-pets__wrapper">
-                        <div class="slider-pets__element">
-                            <img src="../../assets/images/our-friends/pets-katrine.png" alt="Katrine">
-                            <h4>Katrine</h4>
-                            <button class="button">Learn more</button>
-                        </div>
-                        <div class="slider-pets__element">
-                            <img src="../../assets/images/our-friends/pets-jennifer.png" alt="Jennifer">
-                            <h4>Jennifer</h4>
-                            <button class="button">Learn more</button>
-                        </div>
-                        <div class="slider-pets__element">
-                            <img src="../../assets/images/our-friends/pets-woody.png" alt="Woody">
-                            <h4>Woody</h4>
-                            <button class="button">Learn more</button>
-                        </div>
-                        <div class="slider-pets__element">
-                            <img src="../../assets/images/our-friends/pets-sofia.png" alt="Sophia">
-                            <h4>Sophia</h4>
-                            <button class="button">Learn more</button>
-                        </div>
-                        <div class="slider-pets__element">
-                            <img src="../../assets/images/our-friends/pets-timmy.png" alt="Timmy">
-                            <h4>Timmy</h4>
-                            <button class="button">Learn more</button>
-                        </div>
-                        <div class="slider-pets__element">
-                            <img src="../../assets/images/our-friends/pets-charly.png" alt="Charly">
-                            <h4>Charly</h4>
-                            <button class="button">Learn more</button>
-                        </div>
-                        <div class="slider-pets__element">
-                            <img src="../../assets/images/our-friends/pets-scarlet.png" alt="Scarlett">
-                            <h4>Scarlett</h4>
-                            <button class="button">Learn more</button>
-                        </div>
-                        <div class="slider-pets__element">
-                            <img src="../../assets/images/our-friends/pets-freddie.png" alt="Freddie">
-                            <h4>Freddie</h4>
-                            <button class="button">Learn more</button>
-                        </div>
+                        <template id="cardTemplate">
+                            <div class="slider-pets__item">
+                                <div class="slider-pets__element">
+                                    <img src="../../assets/images/our-friends/pets-katrine.png" alt="Katrine">
+                                    <h4>Katrine</h4>
+                                    <button class="button">Learn more</button>
+                                </div>
+                            </div>
+                        </template>
                     </div>
                 </div>
                 <div class="pagination">
-                    <button disabled class="button slider__button"><<</button>
-                    <button disabled class="button slider__button"><</button>
-                    <button class="button slider__button button_current">1</button>
-                    <button class="button slider__button">></button>
-                    <button class="button slider__button">>></button>
+                    <button id="buttonFirst" class="button slider__button"><<</button>
+                    <button id="buttonPrevious" class="button slider__button"><</button>
+                    <div id="paginationNumber" class="button slider__button button_current">1</div>
+                    <button id="buttonNext" class="button slider__button">></button>
+                    <button id="buttonLast" class="button slider__button">>></button>
                 </div>
             </div>
 
@@ -145,5 +113,33 @@
             </div>
         </div>
     </footer>
+    <template id="overlayTemplate">
+        <div class="overlay">
+            <div class="popup">
+                <button class="button popup__button slider__button">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.42618 6.00003L11.7046 1.72158C12.0985 1.32775 12.0985 0.689213 11.7046 0.295433C11.3108 -0.0984027 10.6723 -0.0984027 10.2785 0.295433L5.99998 4.57394L1.72148 0.295377C1.32765 -0.098459 0.68917 -0.098459 0.295334 0.295377C-0.0984448 0.689213 -0.0984448 1.32775 0.295334 1.72153L4.57383 5.99997L0.295334 10.2785C-0.0984448 10.6723 -0.0984448 11.3108 0.295334 11.7046C0.68917 12.0985 1.32765 12.0985 1.72148 11.7046L5.99998 7.42612L10.2785 11.7046C10.6723 12.0985 11.3108 12.0985 11.7046 11.7046C12.0985 11.3108 12.0985 10.6723 11.7046 10.2785L7.42618 6.00003Z" fill="#292929"/>
+                    </svg>
+                </button>
+                <div class="popup__wrapper pet">
+                    <div class="pet__image">
+                        <img src="../../assets/images/our-friends/pets-katrine.png" alt="Katrine">
+                    </div>
+                    <div class="pet__info">
+                        <h3 class="pet__name"></h3>
+                        <h4 class="pet__type-breed"></h4>
+                        <p class="pet__description"></p>
+                        <ul class="pet__additional-info">
+                            <li class="pet__age"><div></div></li>
+                            <li class="pet__inoculations"><div></div></li>
+                            <li class="pet__diseases"><div></div></li>
+                            <li class="pet__parasites"><div></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <script src="pagination.js"></script>
 </body>
 </html>
