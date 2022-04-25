@@ -4,11 +4,15 @@ const mobileBlackout = document.querySelector('.mobile__blackout');
 const mobile = document.querySelector('.mobile');
 const mobileLinks = document.querySelectorAll('.mobile__link');
 
-const closeMobileMenu = () => mobile.classList.remove('mobile_opened');
+const closeMobileMenu = () => {
+    mobile.classList.remove('mobile_opened');
+    document.body.classList.remove('modal');
+}
 
-mobileLabel.addEventListener('click', () =>
+mobileLabel.addEventListener('click', () => {
+    document.body.classList.add('modal');
     mobile.classList.toggle('mobile_opened')
-);
+});
 
 mobileBlackout.addEventListener('click', closeMobileMenu);
 
@@ -96,6 +100,7 @@ fetch('/rgvder-JSFE2022Q1/shelter/assets/pets.json')
             dataArray.push(pet);
             const card = cardTemplate.content.cloneNode(true);
             card.querySelector('img').src = pet.img;
+            card.querySelector('img').alt = pet.name;
             card.querySelector('h4').innerText = pet.name;
             card.querySelector('.slider-pets__element').setAttribute('data-id', i);
             cardArray.push(card);
@@ -178,6 +183,7 @@ function renderPopup(id) {
     const overlay = overlayTemplate.content.cloneNode(true);
     const dataItem = dataArray[id];
     overlay.querySelector('img').src = dataItem.img;
+    overlay.querySelector('img').alt = dataItem.name;
     overlay.querySelector('h3').innerText = dataItem.name;
     overlay.querySelector('h4').innerText = `${dataItem.type} - ${dataItem.breed}`;
     overlay.querySelector('p').innerText = dataItem.description;
@@ -187,11 +193,11 @@ function renderPopup(id) {
     overlay.querySelector('.pet__parasites div').innerHTML = `<span>Parasites: </span> ${dataItem.parasites.join(', ')}`;
 
     document.body.append(overlay);
-    setTimeout(() => document.body.classList.add('model'), 150);
+    setTimeout(() => document.body.classList.add('modal'), 150);
 }
 
 function closeOverlay() {
-    document.body.classList.remove('model');
+    document.body.classList.remove('modal');
     setTimeout(() => document.querySelector('.overlay').remove(), 150);
 }
 

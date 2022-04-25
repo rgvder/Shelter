@@ -465,6 +465,10 @@ h5 {
   letter-spacing: normal;
 }
 
+.modal {
+  overflow: hidden;
+}
+
 @font-face {
   font-family: "Arial";
   src: url("../../assets/fonts/arial/Arial.eot");
@@ -1338,6 +1342,7 @@ h5 {
 }
 .mobile__menu {
   width: 320px;
+  min-height: 450px;
   background-color: #292929;
   position: fixed;
   top: 0;
@@ -1355,6 +1360,7 @@ h5 {
 @media (max-height: 612px) {
   .mobile__menu {
     padding-top: 90px;
+    align-items: stretch;
   }
 }
 .mobile__header {
@@ -1367,6 +1373,14 @@ h5 {
   padding-left: 10px;
   padding-right: 10px;
   width: 100%;
+}
+.mobile__wrapper {
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  padding: 100px 0 100px;
+  width: 100%;
+  justify-content: center;
 }
 .mobile__list {
   display: flex;
@@ -1425,10 +1439,6 @@ h5 {
   display: block;
 }
 
-.model {
-  overflow: hidden;
-}
-
 .overlay {
   position: fixed;
   top: 0;
@@ -1443,8 +1453,13 @@ h5 {
   transition: opacity 0.15s linear;
 }
 
-.model .overlay {
+.modal .overlay {
   opacity: 1;
+}
+
+.overlay:hover .popup:not(:hover) .popup__button {
+  background: #FDDCC4;
+  border: 2px solid #FDDCC4;
 }
 
 .popup {
@@ -1537,7 +1552,12 @@ h5 {
 }
 .pet__type-breed {
   color: #000;
-  padding-bottom: 20px;
+  padding-bottom: 42px;
+}
+@media (max-width: 1279px) {
+  .pet__type-breed {
+    padding-bottom: 19px;
+  }
 }
 @media (max-width: 767px) {
   .pet__type-breed {
