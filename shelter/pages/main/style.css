@@ -1465,6 +1465,8 @@ h5 {
 .popup {
   display: flex;
   position: relative;
+  overflow: auto;
+  height: 100%;
 }
 .popup__wrapper {
   width: 900px;
