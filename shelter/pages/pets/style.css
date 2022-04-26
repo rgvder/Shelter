@@ -1207,6 +1207,20 @@ h5 {
 .modal .overlay {
   opacity: 1;
 }
+@media (max-height: 450px) and (max-width: 1279px) {
+  .modal .overlay {
+    align-items: flex-start;
+    overflow: auto;
+    padding-top: 52px;
+  }
+}
+@media (max-height: 605px) and (min-width: 1280px) {
+  .modal .overlay {
+    align-items: flex-start;
+    overflow: auto;
+    padding-top: 52px;
+  }
+}
 
 .overlay:hover .popup:not(:hover) .popup__button {
   background: #FDDCC4;
@@ -1216,8 +1230,6 @@ h5 {
 .popup {
   display: flex;
   position: relative;
-  overflow: auto;
-  height: 100%;
 }
 .popup__wrapper {
   width: 900px;
