@@ -10,7 +10,7 @@ const closeMobileMenu = () => {
 }
 
 mobileLabel.addEventListener('click', () => {
-    document.body.classList.add('modal');
+    document.body.classList.toggle('modal');
     mobile.classList.toggle('mobile_opened')
 });
 
