@@ -93,7 +93,7 @@ function addEventListeners() {
     })
 }
 
-fetch('/rgvder-JSFE2022Q1/shelter/assets/pets.json')
+fetch('https://rolling-scopes-school.github.io/rgvder-JSFE2022Q1/shelter/assets/pets.json')
     .then(response => response.json())
     .then(data => {
         data.forEach((pet, i) => {
