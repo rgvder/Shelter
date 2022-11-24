@@ -1,2 +1,2 @@
 # rgvder-JSFE2022Q1
-Private repository for @rgvder
+2-page template made in pixel perfect technique
